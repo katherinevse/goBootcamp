@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+
 bool isPalindrome(int x){
     int result =0,sum=0,num=x;
     while(x>0){
