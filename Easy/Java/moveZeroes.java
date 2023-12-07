@@ -11,5 +11,6 @@ class Solution {
         while(temp<nums.length){
             nums[temp] = 0;
             temp++;
+        }
     }
 }
