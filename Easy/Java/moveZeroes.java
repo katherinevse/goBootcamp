@@ -1,5 +1,5 @@
-class Solution {
-    public void moveZeroes(int[] nums) {
+class moveZeroes {
+    public void moving(int[] nums) {
         int temp = 0;
 
         for (int i = 0; i < nums.length; i++) {

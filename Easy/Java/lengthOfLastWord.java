@@ -1,5 +1,5 @@
-class Solution {
-    public int lengthOfLastWord(String s) {
+class lengthOfLastWord {
+    public int length_last(String s) {
         String str = s.trim(); //удаление пробелов
         int count = 0;
         for(int i=str.length()-1;i>=0;i--){

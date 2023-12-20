@@ -1,4 +1,4 @@
-class Solution {
+class calculate_money {
     public int totalMoney(int n) {
         int total = 0;
 

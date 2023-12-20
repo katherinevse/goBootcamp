@@ -1,6 +1,6 @@
 //substring - это метод в Java, который используется для извлечения подстроки из строки
 
-class Solution {
+class largest_odd {
     public String largestOddNumber(String num) {
         for (int i = num.length()-1; i >= 0; i--) {
             int current=num.charAt(i);
