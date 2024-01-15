@@ -20,9 +20,9 @@ import (
 	"fmt"
 )
 
-func main()  {
-	var a,b
-	s :=0;
+func main() {
+	var a, b int
+	s := 0
 	fmt.Scan(&a)
 	fmt.Scan(&b)
 	for i := a; i < b; i++ {
