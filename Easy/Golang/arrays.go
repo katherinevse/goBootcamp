@@ -11,4 +11,7 @@ func main() {
 
 	fmt.Printf("Количество ваших задач на сегодня: %d\n", len(todolist))
 
+	for _, item := range todolist {
+		fmt.Printf("Какой-то айтем: %s\n", item)
+	}
 }
