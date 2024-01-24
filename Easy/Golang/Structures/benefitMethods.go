@@ -37,9 +37,9 @@ func (r Rectangle) Perimeter() int {
 // В го разрешено создавать методы с одинаковыми именами,  в пределах одной структуры.
 //Главное, чтобы получать методы в разных структурах
 
-//func Perimeter(r)  {
+// func Perimeter(r)  {
 //
-//}
+// }
 func main() {
 	c := Circle{10.5}
 	fmt.Println("Call function", Perimeter(c))
