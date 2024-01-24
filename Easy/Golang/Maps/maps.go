@@ -38,6 +38,7 @@ func main() {
 	fmt.Println(newMapper)
 
 	//7. Проверка, есть ли ключ и значение какое-нибудь
+	fmt.Println("==============================")
 	employee := map[string]int{
 		"Den":  10,
 		"Kate": 40,
@@ -50,5 +51,63 @@ func main() {
 	} else {
 		fmt.Println("Den does not exists in map")
 	}
+	//8. Перебор элементов мапы(итерации)
+	fmt.Println("==============================")
+	for key, value := range employee {
+		fmt.Printf("%s i value %d\n", key, value)
+	}
+
+	//9.Как удалять пары
+	//9.1 Удаление существующец пары
+	fmt.Println("==============================")
+
+	fmt.Println("Before deleting", employee)
+	delete(employee, "Den")
+	fmt.Println("After deleting", employee)
+	//9.1 Удаление несуществующей пары
+	if _, ok := employee["Anna"]; ok {
+		delete(employee, "Name") //ОЧЕНЬ дорогая операция!!!!
+	} // так лучше, не нужно итерироваться просто так, делаем лучше прямое обращение
+	fmt.Println("After deleting Name", employee)
+
+	//10. Длина мапы== кол-во пар
+	fmt.Println("==============================")
+	fmt.Println("Pair amount in map: ", len(employee))
+
+	//11. Мапа(как и слайс) ссылочный тип
+	fmt.Println("==============================")
+
+	words := map[string]string{
+		"One": "Один",
+		"Two": "Два",
+	}
+	newWords := words
+	newWords["Three"] = "Три"
+	delete(newWords, "One")
+	fmt.Println("Words map:", words)
+
+	//12. Сравнение мап
+	//12.1 Сравнение массивов( массив можно использовать как ключ в мапе, попробовать!!)
+	fmt.Println("==============================")
+	if [3]int{1, 1, 1} == [3]int{1, 1, 1} {
+		fmt.Println("Equal")
+	} else {
+		fmt.Println("Not equal")
+
+	}
+	////12.2  Сравнение слайсов (Можно сравнивать только с nil но не между собой изза того что тип ссылочный
+	//if []int{1,1,1} == []int{1,1,1}{ //
+	//	fmt.Println("Equal")
+	//
+	//}
+	////12.3 Сравнение мап
+	//aMap:= map[string]int{
+	//	"a":=1
+	//}
+	//bMap:= map[string]int{
+	//	"b":=1
+	//}
+
+	//НЕЛЬЗЯ СРАВНИВАТЬ МЕЖДУ СОБОЙ ТАКЖЕ
 
 }
