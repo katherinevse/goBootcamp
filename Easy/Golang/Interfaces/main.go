@@ -66,6 +66,13 @@ func main() {
 	for _, val := range rectangles {
 		totalSumRec += val.Area() // подсчет площади в val.Area()
 	}
-	fmt.Printf("Посчет всех площадей Rectangle %d", totalSumRec)
+	fmt.Printf("Посчет всех площадей Rectangle %d\n", totalSumRec)
+
+	circleses := []Circle{c1, c2, c3}
+	totalSumCir := 0
+	for _, val := range circleses {
+		totalSumCir += val.Area()
+	}
+	fmt.Printf("Посчет всех площадей Circle %d", totalSumCir)
 
 }

@@ -7,15 +7,14 @@ type Rectangle struct {
 }
 
 //для имен конструкторов в го договорились использовать функции со следующим названием
-// *new() если данный конструктор на один файл( в файле присутсвует описание олько одной структуры)
+// *New() если данный конструктор на один файл( в файле присутсвует описание олько одной структуры)
 // *NewStructName- если в файле присутсвтуют еще какие-либо структуры
 
-func New(newLenght, newWidth int) Rectangle {
-	return Rectangle{newLenght, newLenght}
-
+func New(newLength, newWidth int) Rectangle {
+	return Rectangle{length: newLength, width: newWidth}
 }
 
 func main() {
 	r := New(10, 20)
-	fmt.Println("Type %T and value %v\n", r, r)
+	fmt.Printf("Type %T and value %v", r, r)
 }

@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type Employee struct {
 	name   string
 	salary int
@@ -17,6 +19,6 @@ func (e *Employee) setSalary(newSalary int) {
 
 func main() {
 	e := Employee{"Kathe", 500}
-	//fmt.Println("Before setting parametrs", e.)
+	fmt.Println("Before setting parametrs", e)
 
 }
