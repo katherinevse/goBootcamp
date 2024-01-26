@@ -66,13 +66,28 @@ func main() {
 	for _, val := range rectangles {
 		totalSumRec += val.Area() // подсчет площади в val.Area()
 	}
-	fmt.Printf("Посчет всех площадей Rectangle %d\n", totalSumRec)
+	//fmt.Printf("Посчет всех площадей Rectangle %d\n", totalSumRec)
 
 	circleses := []Circle{c1, c2, c3}
 	totalSumCir := 0
 	for _, val := range circleses {
 		totalSumCir += val.Area()
 	}
-	fmt.Printf("Посчет всех площадей Circle %d", totalSumCir)
+	fmt.Printf("Посчет всех площадей  %d\n", totalSumCir+totalSumRec)
 
+	//6. ПЕРЕДЕЛАЕМ. Воспользуемся интерфейсом
+
+	//figures := make([]figureBuilder, 0, 10) // ОБЪЯВЛЯЮ СЛАЙС ЭКЗЕМПЛЯРОВ, УДОВЛЕТВОРЯЮЩИХ ИНТЕРФЕЙСУ figureBuilder
+	//с Другой стороны кажется, что это слайс каких-то определенных типов
+	//ОКАЗЫВАЕТСЯ ЧТО  ВСЕ СЛАЙСЫ КОТОРЫЕ ИСПОЛЬЗУЮТ ВСЕ ТО, ЧТО НАХОДИТСЯ В figureBuilder, могут
+	figures1 := []figureBuilder{r1, r2, r3, c1, c2, c3}
+
+	//7. Посчитаем общую площадь
+	totalArea := 0
+	for _, fig := range figures1 {
+		totalArea += fig.Area()
+	}
+	fmt.Printf("Посчет всех площадей через интерфейс %d", totalArea)
+	//ПОЯСНЕНИЕ.
+	//Так как каждый экземпляр удовлетворяет интерфейсу figureBuilder, у каждого из слайса figures можно 100% вызвать метод area(который точно
 }
