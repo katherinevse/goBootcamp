@@ -25,4 +25,8 @@ func main() {
 	interfaceSample = sample    //присваивание возможно потому что  sample( Mystring) удовлетворяет интерфейсу BigWord
 	fmt.Println("Isbig", interfaceSample.IsBig())
 
+	////попытка присвоить значение с типажом, неудовлетворяющеему интерфейсу
+	//var interfaceSample bigWord
+	//interfaceSample = "Helloychinka!" //отсутсвует метод, нужен именно mystring2
+
 }
