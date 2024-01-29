@@ -7,7 +7,7 @@ import "fmt"
 func digits(number int, dchnl chan int) {
 	for number != 0 {
 		digit := number % 10
-		dchnl <- digit
+		dchnl <- digit //передаем по каналу цифры последовательно
 		number /= 10
 	}
 	close(dchnl)
@@ -15,11 +15,11 @@ func digits(number int, dchnl chan int) {
 func calcSquares(number int, squareop chan int) {
 	sum := 0
 	dch := make(chan int)
-	go digits(number, dch) // своя горутина для генерации цифр
-	for digit := range dch {
+	go digits(number, dch)   // своя горутина для генерации цифр //принимает канал dch
+	for digit := range dch { //считываем пока канал не закроется(?)
 		sum += digit * digit
 	}
-	squareop <- sum
+	squareop <- sum //куда идет дальше?
 	close(squareop)
 }
 
@@ -35,8 +35,8 @@ func calcCubes(number int, cubeop chan int) {
 }
 
 func main() {
-	number := 589
-	sqrch := make(chan int)
+	number := 456
+	sqrch := make(chan int
 	cubech := make(chan int)
 	go calcSquares(number, sqrch)
 	go calcCubes(number, cubech)

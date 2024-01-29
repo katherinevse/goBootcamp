@@ -20,6 +20,7 @@ func squaresGoRoutine(num int, squareChan chan int) {
 		num /= 10
 	}
 	squareChan <- sum
+	//36 25 16
 }
 
 func cubesGoRoutine(num int, cubeChan chan int) {
@@ -33,7 +34,7 @@ func cubesGoRoutine(num int, cubeChan chan int) {
 }
 
 func main() {
-	number := 6735271
+	number := 456
 	squareChan := make(chan int)
 	cubeChan := make(chan int)
 	go squaresGoRoutine(number, squareChan)
