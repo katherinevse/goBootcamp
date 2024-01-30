@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ab3bda14-f9f1-4077-b3a2-72c20bb6bb56" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../C/.clang-format" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C/len_last_word.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C/longestCommonPrefix.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C/palindrom.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C/remove_el.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C/two_sum.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Golang.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/empty.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/emptyAssertions.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/first.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/samo.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/second.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Maps/maps.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Methods/MethodsStandart/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Methods/benefitMethods.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Methods/constructors.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Methods/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Methods/methodsFollowStruct.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packet/calculator.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packet/go.mod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packet/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packet/rectangle/rectangle.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Structures/pointersStruct.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Structures/struct.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Structures/struct2.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrays.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/breakContinue.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/delim.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/forScan.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fori.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fprintf.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/methods.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sequence.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/slice.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Java/buyChoco.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Java/calculate_money.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Java/convertTemperature.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Java/largest_odd.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Java/lengthOfLastWord.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Java/longestCommonPrefix.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Java/moveZeroes.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" url="file:///usr/local/go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2bAAVKwyduRLKOUrGicPOG3GKyx" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.automatic.dependencies.download&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/katheineevse/Downloads/IT/leetCode/Easy/Golang&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Packet" />
+      <recent name="$PROJECT_DIR$/Methods" />
+      <recent name="$PROJECT_DIR$/Maps" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-gosdk-266795519c66-911b893a1778-org.jetbrains.plugins.go.sharedIndexes.bundled-GO-233.13135.104" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VgoProject">
+    <settings-migrated>true</settings-migrated>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/Package/main.go</url>
+          <line>1</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
