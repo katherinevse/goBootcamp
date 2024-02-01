@@ -10,84 +10,91 @@ import (
 )
 
 var (
-	port string  = "8080"
-	db   []Pizza // база данных
+	//Порт запуска приложения
+	port string = "8080"
+	//Наша "база данных"
+	db []Pizza
 )
 
 func init() {
 	pizza1 := Pizza{
 		ID:       1,
 		Diameter: 22,
-		Price:    500,
-		Title:    "Margarita",
+		Price:    500.50,
+		Title:    "Pepperoni",
 	}
 	pizza2 := Pizza{
 		ID:       2,
-		Diameter: 22,
-		Price:    550,
+		Diameter: 25,
+		Price:    650.23,
 		Title:    "BBQ",
 	}
 	pizza3 := Pizza{
 		ID:       3,
 		Diameter: 22,
-		Price:    700,
-		Title:    "Pepperooni",
+		Price:    450,
+		Title:    "Margaritta",
 	}
+
 	db = append(db, pizza1, pizza2, pizza3)
 }
 
-// наша модель
+// Наша модель
 type Pizza struct {
-	ID       int    `json:"id"`
-	Diameter int    `json:"diameter"`
-	Price    int    `json:"price"`
-	Title    string `json:"title"`
+	ID       int     `json:"id"`
+	Diameter int     `json:"diameter"`
+	Price    float64 `json:"price"`
+	Title    string  `json:"title"`
 }
 
-// вспомогательная функция для модели  (модельный метод)
+// Вспомогательная функция для модели (модельный метод)
 func FindPizzaById(id int) (Pizza, bool) {
 	var pizza Pizza
 	var found bool
-	for _, value := range db {
-		if value.ID == id {
-			pizza = value
+	for _, p := range db {
+		if p.ID == id {
+			pizza = p
 			found = true
 			break
 		}
 	}
 	return pizza, found
-
 }
 
-type ErrorMesage struct {
+type ErrorMessage struct {
 	Message string `json:"message"`
 }
 
-func GetAllPizzas(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
-	log.Println("Кто-то вызвал данный запрос обо всех пиццах")
-	w.WriteHeader(200)            // StatusCode для запроса ЗАЧЕМ ЭТО ПРОПИСЫВАТЬ?
-	json.NewEncoder(w).Encode(db) //Сериализация+ запись в w NewEncoder- подготавливает экземляр записи Encode- записывает в байты, записывает в формате json в w, после этого w закрывается
+func GetAllPizzas(writer http.ResponseWriter, request *http.Request) {
+	//Прописывать хедеры .
+	writer.Header().Set("Content-Type", "application/json")
+	log.Println("Get infos about all pizzas in database")
+	writer.WriteHeader(200)            // StatusCode для запроса
+	json.NewEncoder(writer).Encode(db) // Сериализация + запись в writer
 }
 
-func GetPizzaById(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
-	// считаем id из строки запроса и конвертируем его в инт
-	//получаем значение из id
-	vars := mux.Vars(r)                 // извлекает переменные маршрута из объекта http.Request.{id} - это переменная маршрута, эти значения могут быть извлечены с использованием mux.Vars(r)
-	id, err := strconv.Atoi(vars["id"]) // отдаем то, что лежит в поле id
+func GetPizzaById(writer http.ResponseWriter, request *http.Request) {
+	writer.Header().Set("Content-Type", "application/json")
+	//Считаем id из строки запроса и конвертируем его в int
+	vars := mux.Vars(request) // {"id" : "12"}
+	id, err := strconv.Atoi(vars["id"])
 	if err != nil {
-		log.Fatal(err) // пока что так
+		log.Println("client trying to use invalid id param:", err)
+		msg := ErrorMessage{Message: "do not use ID not supported int casting"}
+		writer.WriteHeader(400)
+		json.NewEncoder(writer).Encode(msg)
+		return
 	}
-	log.Println("Trying to send to client pizza with id", id)
+	log.Println("Trying to send to client pizza with id #:", id)
 	pizza, ok := FindPizzaById(id)
 	if ok {
-		w.WriteHeader(200)
+		writer.WriteHeader(200)
+		json.NewEncoder(writer).Encode(pizza)
 	} else {
-		mdg := ErrorMesage{Message: "Pizza with tis id does not exist in database"}
-		json.NewEncoder(w).Encode(mdg) // отправляем пользователю все это
+		msg := ErrorMessage{Message: "pizza with that id does not exists in database"}
+		writer.WriteHeader(404)
+		json.NewEncoder(writer).Encode(msg)
 	}
-
 }
 
 func main() {
@@ -99,5 +106,8 @@ func main() {
 	//2. Если на вход пришел запрос вида /pizza/{id}
 	router.HandleFunc("/pizza/{id}", GetPizzaById).Methods("GET")
 	log.Println("Router configured successfully! Let's go!")
-	log.Fatal(http.ListenAndServe(":"+port, nil))
+	log.Fatal(http.ListenAndServe(":"+port, router))
+	// if err := http.ListenAndServe(":"+port, nil); err != nil {
+	// 	log.Fatal(err)
+	// }
 }
