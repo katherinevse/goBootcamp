@@ -59,6 +59,10 @@ func FindPizzaById(id int) (Pizza, bool) {
 
 }
 
+type ErrorMesage struct {
+	Message string `json:"message"`
+}
+
 func GetAllPizzas(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	log.Println("Кто-то вызвал данный запрос обо всех пиццах")
@@ -79,6 +83,9 @@ func GetPizzaById(w http.ResponseWriter, r *http.Request) {
 	pizza, ok := FindPizzaById(id)
 	if ok {
 		w.WriteHeader(200)
+	} else {
+		mdg := ErrorMesage{Message: "Pizza with tis id does not exist in database"}
+		json.NewEncoder(w).Encode(mdg) // отправляем пользователю все это
 	}
 
 }
