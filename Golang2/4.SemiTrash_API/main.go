@@ -4,6 +4,7 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/joho/godotenv"
 	"log"
+	"main.go/utils"
 	"net/http"
 	"os"
 )
@@ -31,6 +32,9 @@ func init() {
 func main() {
 	log.Println("Starting RestApi server on port", port)
 	router := mux.NewRouter()
+	utils.BuildbookResoursePrefix(router, bookResoursePrefix)
+	utils.BuildmanybookResoursePrefix(router, manyBooksResoursePrefix)
+
 	log.Println("Router is ready to go !")
 	log.Fatal(http.ListenAndServe(":"+port, router)) //Здесь происходит запуск HTTP-сервера. Функция http.ListenAndServe слушает HTTP-запросы на указанном порту.
 
