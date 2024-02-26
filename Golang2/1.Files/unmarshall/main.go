@@ -8,14 +8,14 @@ import (
 	"os"
 )
 
-// Struct for representation total slice
+//Struct for representation total slice
 // First Level ob JSON object Parsing
 type Users struct {
 	Users []User `json:"users"`
 }
 
-// Internal user representation
-// Second level of object JSON parsin
+//Internal user representation
+//Second level of object JSON parsin
 type User struct {
 	Name   string `json:"name"`
 	Type   string `json:"type"`
@@ -23,14 +23,14 @@ type User struct {
 	Social Social `json:"social"`
 }
 
-// Socail block representation
-// Third level of object parsing
+//Socail block representation
+//Third level of object parsing
 type Social struct {
 	Vkontakte string `json:"vkontakte"`
 	Facebook  string `json:"facebook"`
 }
 
-// Функция для распечатывания User
+//Функция для распечатывания User
 func PrintUser(u *User) {
 	fmt.Printf("Name: %s\n", u.Name)
 	fmt.Printf("Type: %s\n", u.Type)
@@ -38,7 +38,7 @@ func PrintUser(u *User) {
 	fmt.Printf("Social. VK: %s and FB: %s\n", u.Social.Vkontakte, u.Social.Facebook)
 }
 
-// 1. Рассмотрим процесс десериализации (то есть когда из последовательности в объект)
+//1. Рассмотрим процесс десериализации (то есть когда из последовательности в объект)
 func main() {
 	//1. Создадим файл дескриптор
 	jsonFile, err := os.Open("users.json")
@@ -48,8 +48,8 @@ func main() {
 	defer jsonFile.Close()
 	fmt.Println("File descriptor successfully created!")
 
-	////2. Теперь десериализуем содержимое jsonFile в экземпляр Go
-	//// Инициализируем экземпляр(объект) Users
+	//2. Теперь десериализуем содержимое jsonFile в экземпляр Go
+	// Инициализируем экземпляр Users
 	var users Users
 
 	// Вычитываем содержимое jsonFile в ВИДЕ ПОСЛЕДОВАТЕЛЬНОСТИ БАЙТ!
@@ -57,13 +57,9 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	//fmt.Println(byteValue) // распечатает набор байтов!
 
-	//// Теперь задача - перенести все из byteValue в users - это и есть десериализация!
-	json.Unmarshal(byteValue, &users) //1- набор байтов 2- куда направить вывод?
-	//fmt.Println(users)
-	//теперь все находится в структуре нашей users
-
+	// Теперь задача - перенести все из byteValue в users - это и есть десериализация!
+	json.Unmarshal(byteValue, &users)
 	for _, u := range users.Users {
 		fmt.Println("================================")
 		PrintUser(&u)

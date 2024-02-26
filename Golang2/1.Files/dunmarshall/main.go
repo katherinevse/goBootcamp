@@ -27,8 +27,4 @@ func main() {
 
 	fmt.Println(result["users"])
 
-	for i := result{
-		fmt.Printf("age")
-	}
-
 }
