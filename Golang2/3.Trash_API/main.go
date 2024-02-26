@@ -23,6 +23,7 @@ func init() {
 		Price:    500.50,
 		Title:    "Pepperoni",
 	}
+
 	pizza2 := Pizza{
 		ID:       2,
 		Diameter: 25,
@@ -39,7 +40,7 @@ func init() {
 	db = append(db, pizza1, pizza2, pizza3)
 }
 
-// Наша модель
+//Наша модель
 type Pizza struct {
 	ID       int     `json:"id"`
 	Diameter int     `json:"diameter"`

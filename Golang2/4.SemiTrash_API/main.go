@@ -1,41 +1,40 @@
 package main
 
 import (
-	"github.com/gorilla/mux"
-	"github.com/joho/godotenv"
 	"log"
-	"main.go/utils"
 	"net/http"
 	"os"
+
+	"4.SemiTrash_API/utils"
+	"github.com/gorilla/mux"
+	"github.com/joho/godotenv"
 )
 
 const (
-	apiPrefix string = "api/v1"
+	apiPrefix string = "/api/v1"
 )
 
 var (
 	port                    string
-	bookResoursePrefix      string = apiPrefix + "/book"
-	manyBooksResoursePrefix string = apiPrefix + "/books"
+	bookResourcePrefix      string = apiPrefix + "/book"  //api/v1/book/
+	manyBooksResourcePrefix string = apiPrefix + "/books" //api/v1/books/
 )
 
-// func init() - это специальная функция в Go, которая вызывается автоматически при инициализации пакета.
 func init() {
-	err := godotenv.Load() // Загружаем переменные окружения из файла с именем ".env" с использованием пакета godotenv.
+	err := godotenv.Load()
 	if err != nil {
-		log.Fatalln("could not find .env file!")
+		log.Fatal("could not find .env file:", err)
 	}
-	// Получаем значение переменной окружения "app_port".
 	port = os.Getenv("app_port")
 }
 
 func main() {
-	log.Println("Starting RestApi server on port", port)
+	log.Println("Starting REST API server on port:", port)
 	router := mux.NewRouter()
-	utils.BuildbookResoursePrefix(router, bookResoursePrefix)
-	utils.BuildmanybookResoursePrefix(router, manyBooksResoursePrefix)
 
-	log.Println("Router is ready to go !")
-	log.Fatal(http.ListenAndServe(":"+port, router)) //Здесь происходит запуск HTTP-сервера. Функция http.ListenAndServe слушает HTTP-запросы на указанном порту.
+	utils.BuildBookResource(router, bookResourcePrefix)
+	utils.BuildManyBooksResourcePrefix(router, manyBooksResourcePrefix)
 
+	log.Println("Router initalizing successfully. Ready to go!")
+	log.Fatal(http.ListenAndServe(":"+port, router))
 }
